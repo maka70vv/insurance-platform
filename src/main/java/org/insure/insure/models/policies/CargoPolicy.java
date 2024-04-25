@@ -56,8 +56,9 @@ public class CargoPolicy {
     @Column(nullable = false)
     private String destinationPoint;
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_beginning;
-    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_expiration;
     @OneToOne
     private InsuranceCompanies insurance_company;

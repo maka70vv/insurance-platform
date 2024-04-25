@@ -38,6 +38,7 @@ public class Users implements UserDetails {
     private String inn;
     @Column(length = 34)
     private String iban_number;
+    @Temporal(TemporalType.DATE)
     private Date date_of_birth;
     @Column(length = 9)
     private String passport_number;

@@ -15,31 +15,30 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class MedicalPayment {
+public class VZRPayments {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
     private Users user;
     @OneToOne
-    private MedicalServices service;
+    private VZRServices service;
     @OneToOne
     private LimitsByUser limit;
-    @Transient
-    private MultipartFile kkmCheck;
-    @Transient
-    private MultipartFile referral;
-    @Transient
-    private MultipartFile invoice;
-    @Transient
-    private MultipartFile opinions_on_medications;
-    @Column(nullable = false)
-    private int sum;
-    private int final_summ;
-    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dateTime;
-    private String inn;
+    @Column(nullable = false)
+    private int summ;
+    private int final_summ;
+    @Column(nullable = false)
+    @Transient
+    private MultipartFile medical_docs;
+    @Column(nullable = false)
+    @Transient
+    private MultipartFile travel_docs;
+    @Column(nullable = false)
+    @Transient
+    private MultipartFile invoices;
     @Column(columnDefinition = "boolean default false")
     private boolean processed;
     @Column(columnDefinition = "boolean default false")

@@ -27,8 +27,10 @@ public class VZRPolicy {
     private String inn;
     @Column(unique = true)
     private String policy_num;
+    @Temporal(TemporalType.DATE)
     private Date date_beginning;
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_expiration;
     @Enumerated(value = EnumType.STRING)
     private Places place;

@@ -6,40 +6,32 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.insure.insure.models.Users;
+import org.insure.insure.models.policies.CargoPolicy;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
 
 @Entity
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class MedicalPayment {
+public class GruzPayments {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @OneToOne
     private Users user;
-    @OneToOne
-    private MedicalServices service;
-    @OneToOne
-    private LimitsByUser limit;
-    @Transient
-    private MultipartFile kkmCheck;
-    @Transient
-    private MultipartFile referral;
-    @Transient
-    private MultipartFile invoice;
-    @Transient
-    private MultipartFile opinions_on_medications;
     @Column(nullable = false)
-    private int sum;
-    private int final_summ;
+    @OneToOne
+    private CargoPolicy policy;
     @Column(nullable = false)
+    @Transient
+    private MultipartFile image;
+    @Column(nullable = false)
+    private String accidentPlace;
     @Temporal(TemporalType.DATE)
     private Date dateTime;
-    private String inn;
     @Column(columnDefinition = "boolean default false")
     private boolean processed;
     @Column(columnDefinition = "boolean default false")

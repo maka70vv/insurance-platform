@@ -25,9 +25,9 @@ public class AccidentPolicy {
     private String inn;
     @Column(unique = true)
     private String policy_num;
-    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_beginning;
-    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_expiration;
     @Column(nullable = false)
     private String insured_territory;

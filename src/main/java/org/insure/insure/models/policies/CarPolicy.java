@@ -37,8 +37,10 @@ public class CarPolicy {
     @Column(nullable = false)
     private String car_date_release;
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_beginning;
     @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date date_expiration;
     @Column(nullable = false)
     private String insurance_territory;
