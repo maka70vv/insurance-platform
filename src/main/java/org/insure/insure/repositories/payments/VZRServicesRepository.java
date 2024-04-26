@@ -2,7 +2,9 @@ package org.insure.insure.repositories.payments;
 
 import org.insure.insure.models.payments.VZRServices;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface VZRServicesInterface extends JpaRepository<VZRServices, Long> {
+@Repository
+public interface VZRServicesRepository extends JpaRepository<VZRServices, Long> {
      VZRServices findByName(String name);
 }
